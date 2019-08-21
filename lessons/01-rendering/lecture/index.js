@@ -1,6 +1,9 @@
 import "./styles.css"
-import React from "react"
-import ReactDOM from "react-dom"
+import "app/index.css"
+import "app/App.css"
+
+import React from "react"   //declaration
+import ReactDOM from "react-dom"    //implementation
 
 /**********************************************************/
 // We like React because:
@@ -14,7 +17,7 @@ import ReactDOM from "react-dom"
 // const reactElement = <div>Heyooooooo</div>
 // const domElement = document.getElementById("root")
 
-// // and away we go!
+// // // and away we go!
 // ReactDOM.render(reactElement, domElement)
 
 /**********************************************************/

@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 import VisuallyHidden from "@reach/visually-hidden"
-import { FaSignInAlt } from "react-icons/fa"
+import { FaSignInAlt, FaToggleOff } from "react-icons/fa"
 import TabsButton from "app/TabsButton"
 import { login } from "app/utils"
 
@@ -8,6 +8,11 @@ import { login } from "app/utils"
 // export default LoginFormFinal
 
 export default function LoginForm() {
+  const [showPass, togglePass] = useState(false)
+  function toggleType() {
+    togglePass(!showPass);
+  }
+
   return (
     <form>
       <VisuallyHidden>
@@ -25,7 +30,7 @@ export default function LoginForm() {
       </VisuallyHidden>
       <input
         id="login:password"
-        type="password"
+        type={showPass ? "text" : "password"}
         className="inputField"
         placeholder="Password"
       />
@@ -35,8 +40,10 @@ export default function LoginForm() {
           <input
             className="passwordCheckbox"
             type="checkbox"
-            defaultChecked={false}
-          />{" "}
+            defaultChecked={showPass}
+            onChange={toggleType}
+          />
+          {" "}
           show password
         </label>
       </div>
